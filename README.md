@@ -10,5 +10,5 @@
 Python script file to crack RSA encrypted message via mathmatical calculation.
 
 ## CONSOLE DISPLAY
-![Screenshot](picture1.JPG) 
+![Screenshot](picture1.png) 
 
