@@ -9,7 +9,7 @@ python rsa-cracker.py
 - [ ] Requires 3rd party RsaCtfTool to be within the sub directory.
 
 
-Python script file to crack RSA encrypted messages via a weak public key, or a XML mathematical calculation. 
+Python script file to crack a RSA encrypted message via weak public key, or XML mathematical calculation.
 
 ## CONSOLE DISPLAY
 ![Screenshot](picture2.png) 
