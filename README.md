@@ -8,7 +8,7 @@
 - [ ] Requires 3rd party RsaCtfTool to be within the sub directory.
 - [ ] RSA XML Cracker is currently under development but working.
 
-Python script file to crack RSA encrypted message via mathmatical calculation.
+Python script file to crack RSA encrypted messages via a weak public key, or a XML mathematical calculation. 
 
 ## CONSOLE DISPLAY
 ![Screenshot](picture2.png) 
