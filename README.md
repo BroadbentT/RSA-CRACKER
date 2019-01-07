@@ -1,8 +1,8 @@
 # RSA-CRACKER
 
 | LANGUAGE | FILENAME |
-|--------  |----------|
-|python 3  |rsa-cracker.py|
+|------ |----------|
+|python |rsa-cracker.py|
 || MD5 Hash - aedaa009517f719ee2bca2ae4e7474f4 |
 
 - [ ] Requires 3rd party RsaCtfTool to be within the sub directory.
