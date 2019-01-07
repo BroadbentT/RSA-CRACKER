@@ -6,7 +6,6 @@
 || MD5 Hash - aedaa009517f719ee2bca2ae4e7474f4 |
 
 - [ ] Requires 3rd party RsaCtfTool to be within the sub directory.
-- [ ] RSA XML Cracker is currently under development but working.
 
 Python script file to crack RSA encrypted messages via a weak public key, or a XML mathematical calculation. 
 
