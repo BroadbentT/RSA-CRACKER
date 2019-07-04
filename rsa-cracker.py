@@ -6,9 +6,6 @@
 #                BY TERENCE BROADBENT BSC CYBER SECURITY (FIRST CLASS)
 # -------------------------------------------------------------------------------------
 
-import nerdvision
-nerdvision.start('6d8538bdce083d5824d0d0e2b5196f1fb43267999554bab3759b4c3e918a7e9842b1d683373a67189a8d374c0c99edbd5635c06cfe3dad253d916a59c601e280')
-
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
