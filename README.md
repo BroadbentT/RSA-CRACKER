@@ -12,5 +12,5 @@ Usage: python rsa-cracker.py
 - [ ] Requires 3rd party [RsaCtfTool](https://github.com/sourcekris/RsaCtfTool) to be located within the sub directory.
 
 ## CONSOLE DISPLAY
-![Screenshot](picture2.png) 
+![Screenshot](picture1.png) 
 
