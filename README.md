@@ -1,6 +1,6 @@
 # RSA CRACKER
 
-Python script file to crack a RSA encrypted message via weak public key, or XML mathematical calculation.
+Python script file to crack a RSA encrypted message via weak public key, or XML math calculation.
 
 Usage: python rsa-cracker.py
 
