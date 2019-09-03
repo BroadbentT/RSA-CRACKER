@@ -3,7 +3,7 @@
 
 Usage: python rsa-cracker.py
 
-| LANGUAGE | FILENAME       | MD5 KASH                         |
+| LANGUAGE | FILENAME       | MD5 HASH                         |
 |------    |------          | -------                          |
 | python   | rsa-cracker.py | 56a9d319d04cf0ba19e416b59574444f |
 | python   | createfiles.py | 7baf1dba741d5140679ef0fe244de19f |
