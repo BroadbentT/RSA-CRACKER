@@ -9,7 +9,7 @@
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : 1.0                                                                
+# Version: 2.0                                                              
 # Details : Load any required imports.
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -17,43 +17,36 @@
 import os
 import sys
 
-banner   = "banner"
-argvment = len(sys.argv)
-
-if argvment >= 1:
-   banner = sys.argv[1]
-
 # -------------------------------------------------------------------------------------
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : 1.0                                                                
+# Version: 2.0                                                              
 # Details : Display a universal header.    
 # Modified: N/A                                                               
 # -------------------------------------------------------------------------------------
 
-if banner == "nobanner":
-   print "\n"
-else:
-   print " ____  ____    _       ____ ____      _    ____ _  _______ ____   "
-   print "|  _ \/ ___|  / \     / ___|  _ \    / \  / ___| |/ / ____|  _ \  "
-   print "| |_) \___ \ / _ \   | |   | |_) |  / _ \| |   | ' /|  _| | |_) | "
-   print "|  _ < ___) / ___ \  | |___|  _ <  / ___ \ |___| . \| |___|  _ <  "
-   print "|_| \_\____/_/   \_\  \____|_| \_\/_/   \_\____|_|\_\_____|_| \_\ "
-   print "                                                                  "
-   print "      BY TERENCE BROADBENT BSC CYBER SECURITY (FIRST CLASS)     \n"
+os.system("clear")
+
+print(" ____  ____    _       ____ ____      _    ____ _  _______ ____   ")
+print("|  _ \/ ___|  / \     / ___|  _ \    / \  / ___| |/ / ____|  _ \  ")
+print("| |_) \___ \ / _ \   | |   | |_) |  / _ \| |   | ' /|  _| | |_) | ")
+print("|  _ < ___) / ___ \  | |___|  _ <  / ___ \ |___| . \| |___|  _ <  ")
+print("|_| \_\____/_/   \_\  \____|_| \_\/_/   \_\____|_|\_\_____|_| \_\ ")
+print("                                                                  ")
+print("      BY TERENCE BROADBENT BSC CYBER SECURITY (FIRST CLASS)     \n")
 
 # -------------------------------------------------------------------------------------
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : 1.0                                                                
+# Version: 2.0                                                              
 # Details : Create the plaintext file and the weak .pub key file.
 # Modified: N/A                                                               
 # -------------------------------------------------------------------------------------
 
-os.system("echo Too many secrets... > text.txt")
+os.system("echo Too many secrets... > plain1.txt")
 
-with open('key.pub', 'w') as the_file:
-   the_file.write("-----BEGIN PUBLIC KEY-----\n")
+with open('weak_rsa_key.pub', 'w') as the_file:
+   the_file.write("-----BEGIN RSA PUBLIC KEY-----\n")
    the_file.write("MIIBHzANBgkqhkiG9w0BAQEFAAOCAQwAMIIBBwKBgQMwO3kPsUnaNAbUlaubn7ip\n")
    the_file.write("4pNEXjvUOxjvLwUhtybr6Ng4undLtSQPCPf7ygoUKh1KYeqXMpTmhKjRos3xioTy\n")
    the_file.write("23CZuOl3WIsLiRKSVYyqBc9d8rxjNMXuUIOiNO38ealcR4p44zfHI66INPuKmTG3\n")
@@ -61,17 +54,17 @@ with open('key.pub', 'w') as the_file:
    the_file.write("qlqqOFD8JA5UFK0roQkOjhLWSVu8c6DLpWJQQlXHPqP702qIg/gx2o0bm4EzrCEJ\n")
    the_file.write("4gYo6Ax+U7q6TOWhQpiBHnC0ojE8kUoqMhfALpUaruTJ6zmj8IA1e1M6bMqVF8sr\n")
    the_file.write("lb/N\n")
-   the_file.write("-----END PUBLIC KEY-----\n")
+   the_file.write("-----END RSA PUBLIC KEY-----\n")
 
 # -------------------------------------------------------------------------------------
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : 1.0                                                                
+# Version: 2.0                                                              
 # Details : Create the RSA xml file and its associated encrypted message.
 # Modified: N/A                                                               
 # -------------------------------------------------------------------------------------
 
-with open('rsa.xml', 'w') as the_file:
+with open('weak_rsa.xml', 'w') as the_file:
    the_file.write("<RSAKeyValue>\n")
    the_file.write("   <Modulus></Modulus>\n")
    the_file.write("   <Exponent></Exponent>\n")
@@ -83,10 +76,13 @@ with open('rsa.xml', 'w') as the_file:
    the_file.write("   <D></D>\n")
    the_file.write("</RSAKeyValue>\n")
 
-os.system("echo 62078086677416686867183857957350338314446280912673392448065026850212685326551183962056495964579782325302082054393933682265772802750887293602432512967994805549965020916953644635965916607925335639027579187435180607475963322465417758959002385451863122106487834784688029167720175128082066670945625067803812970871 > rsa.enc")
+#HTB CODE
+os.system("echo 'ch1n3z_r3m4ind3r_the0rem_r0ck$$$_9792' > plain2.txt")
+os.system("echo 62078086677416686867183857957350338314446280912673392448065026850212685326551183962056495964579782325302082054393933682265772802750887293602432512967994805549965020916953644635965916607925335639027579187435180607475963322465417758959002385451863122106487834784688029167720175128082066670945625067803812970871 > xml_rsa.enc")
 
-if banner != "nobanner":
-   os.system("ls -I createfiles.py -I rsa-cracker.py -I RsaCtfTool")
+os.system("ls -I createfiles.py -I rsa-cracker.py -I RsaCtfTool")
+
+print("\n")
 
 #Eof
 
