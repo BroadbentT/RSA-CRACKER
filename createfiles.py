@@ -45,7 +45,7 @@ print("      BY TERENCE BROADBENT BSC CYBER SECURITY (FIRST CLASS)     \n")
 
 os.system("echo Too many secrets... > plain1.txt")
 
-with open('weak_rsa_key.pub', 'w') as the_file:
+with open('weak_rsa.pub', 'w') as the_file:
    the_file.write("-----BEGIN RSA PUBLIC KEY-----\n")
    the_file.write("MIIBHzANBgkqhkiG9w0BAQEFAAOCAQwAMIIBBwKBgQMwO3kPsUnaNAbUlaubn7ip\n")
    the_file.write("4pNEXjvUOxjvLwUhtybr6Ng4undLtSQPCPf7ygoUKh1KYeqXMpTmhKjRos3xioTy\n")
