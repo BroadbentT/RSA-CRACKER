@@ -31,6 +31,11 @@ from termcolor import colored
 # Modified: N/A                                                               
 # -------------------------------------------------------------------------------------
 
+if len(sys.argv) < 2:
+   blackHat = 0
+else:
+   blackHat = 1
+
 if os.path.exists('createfiles.py'):
     pass
 else:
@@ -110,7 +115,7 @@ def system():
       print("             ]", end=' ')
       
    print("\tEncrypted text     [", end=' ')
-   if os.path.exists('text.enc'):
+   if os.path.exists('text1.enc'):
       print(colored("text1.enc   ", colour3), end=' ')
       print("]", end=' ')
    else:
@@ -161,10 +166,11 @@ def system():
 
 def menu():
    print("(01) Build required files.	(04) View weak RSA .pub file.	(07) Read RSA plaintext file.	(09) Encrypt plain1.txt.    (10) Decrypt text file.	(12) Read decrypted text.dec.")
-   print("(02) Build fake PEM  file.	(05) View weak RSA .xml file.	(08) Read XML plaintext file.	(  )", end=' ')
-   print(colored("Encrypt .xml text file.", colour1), end='')
-   print("(11) Crack .xml text file.	(13) Read decrypted _xml.dec.")
+   print("(02) Build fake PEM  file.	(05) View weak RSA .xml file.	(08) Read XML plaintext file.	                            (11) Crack .xml text file.	(13) Read decrypted _xml.dec.")
    print("(03) Clean files and exit.	(06) View fake RSA .pem file.")
+   if blackHat == 1:
+      print(colored("\nBLACK HAT >>>", colour7), end=' ')
+      print("			(14) Load weak RSA .pub file.	(15) Load Encrypted textfile.")
    return
 
 # -------------------------------------------------------------------------------------
@@ -221,8 +227,8 @@ while True:
          os.remove('plain1.txt')
       if os.path.exists('plain2.txt'):
          os.remove('plain2.txt')
-      if os.path.exists('text.enc'):
-         os.remove('text.enc')
+      if os.path.exists('text1.enc'):
+         os.remove('text1.enc')
       if os.path.exists('text.dec'):
          os.remove('text.dec')
       if os.path.exists('_xml.dec'):
@@ -321,13 +327,13 @@ while True:
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
 # Version : 1.0
-# Details : Menu option selected - Encrypt text.txt, output to text.enc
+# Details : Menu option selected - Encrypt text.txt, output to text1.enc
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    if selection =='9':
       if os.path.exists('plain1.txt'):
-         os.system("openssl pkeyutl -encrypt -inkey weak_rsa.pub -pubin -in plain1.txt -out text.enc")
+         os.system("openssl pkeyutl -encrypt -inkey weak_rsa.pub -pubin -in plain1.txt -out text1.enc")
          print("\nFile encrypted.")
       else:
          print("\nPlaintext file has not been created yet...")
@@ -337,15 +343,15 @@ while True:
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub                                                               
 # Version : 1.0
-# Details : Menu option selected - Decrypt text.enc, output to decrypted.txt
+# Details : Menu option selected - Decrypt text1.enc, output to decrypted.txt
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
    elif selection =='10':
-      if os.path.exists('text.enc'):
+      if os.path.exists('text1.enc'):
          if os.path.exists('private.pem'):
-            os.system("openssl pkeyutl -decrypt -inkey private.pem -in text.enc -out text.dec")
-#           os.system("python ./RsaCtfTool/RsaCtfTool.py --publickey key.pub --uncipherfile text.enc > text.dec")
+            os.system("openssl pkeyutl -decrypt -inkey private.pem -in text1.enc -out text.dec")
+#           os.system("python ./RsaCtfTool/RsaCtfTool.py --publickey key.pub --uncipherfile text1.enc > text.dec")
             print("\nFile successfuly decrypted.")
          else:
             print("\nThe private.pem file has not been created yet.")         
@@ -419,6 +425,40 @@ while True:
          os.system("cat _xml.dec")
       else:
          print("No cyphertext has been decrypted yet!!...")
+      input("\n\nPress any key to continue...")
+      
+# ------------------------------------------------------------------------------------- 
+# AUTHOR  : Terence Broadbent                                                    
+# CONTRACT: GitHub                                                               
+# Version : 1.0
+# Details : Menu option selected - BLACK HAT - Load a third pary wek RSA file.
+# Modified: N/A
+# -------------------------------------------------------------------------------------
+
+   elif selection == '14': 
+      newFile = input("[+] Enter file name: ")
+      if os.path.exists(newFile):
+         os.system("cp " + newFile + " weak_rsa.pub")
+         print("[*] File allocated...")
+      else:
+         print("[-] Sorry, I could not find that file in this directory...")
+      input("\n\nPress any key to continue...")
+      
+# ------------------------------------------------------------------------------------- 
+# AUTHOR  : Terence Broadbent                                                    
+# CONTRACT: GitHub                                                               
+# Version : 1.0
+# Details : Menu option selected - BLACK HAT - Load a third pary wek RSA file.
+# Modified: N/A
+# -------------------------------------------------------------------------------------
+
+   elif selection == '15': 
+      newFile = input("[+] Enter file name: ")
+      if os.path.exists(newFile):
+         os.system("cp " + newFile + " text1.enc")
+         print("[*] File allocated...")
+      else:
+         print("[-] Sorry, I could not find that file in this directory...")
       input("\n\nPress any key to continue...")
   
 #Eof
