@@ -9,7 +9,7 @@
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : 2.0                                                                
+# Version : 3.0                                                                
 # Details : Load any required imports.
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -26,7 +26,7 @@ from termcolor import colored
 # -------------------------------------------------------------------------------------
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub                                                               
-# Version : 1.0
+# Version : 3.0
 # Details : Ccheck required installation files used by this utility are present.
 # Modified: N/A                                                               
 # -------------------------------------------------------------------------------------
@@ -51,7 +51,7 @@ else:
 # -------------------------------------------------------------------------------------
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub                                                               
-# Version : 1.0
+# Version : 3.0
 # Details : Define system display colours.
 # Modified: N/A                                                               
 # -------------------------------------------------------------------------------------
@@ -69,7 +69,7 @@ colour8 = "magenta"
 # -------------------------------------------------------------------------------------
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : 2.0                                                                
+# Version : 3.0                                                                
 # Details : Create function to display my universal header.    
 # Modified: N/A                                                               
 # -------------------------------------------------------------------------------------
@@ -87,7 +87,7 @@ def header():
 # -------------------------------------------------------------------------------------
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : 2.0                                                                
+# Version : 3.0                                                                
 # Details : Create function to display the status of the system files to the user.
 # Modified: N/A                                                               
 # -------------------------------------------------------------------------------------
@@ -159,7 +159,7 @@ def system():
 # -------------------------------------------------------------------------------------
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub                                                               
-# Version : 1.0
+# Version : 3.0
 # Details : Create the main menu system.
 # Modified: N/A                                                               
 # -------------------------------------------------------------------------------------
@@ -176,7 +176,7 @@ def menu():
 # -------------------------------------------------------------------------------------
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub                                                               
-# Version : 1.0
+# Version : 3.0
 # Details : Main Controller.
 # Modified: N/A                                                               
 # -------------------------------------------------------------------------------------
@@ -190,7 +190,7 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : 1.0
+# Version : 3.0
 # Details : Menu option selected - Run createfiles.py
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -201,7 +201,7 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : 1.0
+# Version : 3.0
 # Details : Menu option selected - Create private.pem from key.pub
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -209,7 +209,7 @@ while True:
    elif selection =='2':
       if os.path.exists('./weak_rsa.pub'):
          print("\nUsing wiener attack - https://github.com/sourcekris/RsaCtfTool.")
-         os.system("python3 ./RsaCtfTool/RsaCtfTool.py --publickey ./weak_rsa.pub --private --output private.pem --attack wiener")
+         os.system("RsaCtfTool --publickey ./weak_rsa.pub --private --output private.pem # --attack wiener")
       else:
          print("\nWeak_rsa_key file has not been created yet...")
       input("\nPress any key to continue...")
@@ -217,7 +217,7 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub                                                               
-# Version : 1.0
+# Version : 3.0
 # Details : Menu option selected - Clean up the system files.
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -246,7 +246,7 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub                                                               
-# Version : 1.0
+# Version : 3.0
 # Details : Menu option selected - View the weak RSA file.
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -262,7 +262,7 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub                                                               
-# Version : 1.0
+# Version : 3.0
 # Details : Menu option selected - View weak .xml file.
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -278,7 +278,7 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub                                                               
-# Version : 1.0
+# Version : 3.0
 # Details : Menu option selected - View newly created private.pem file.
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -294,7 +294,7 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : 1.0
+# Version : 3.0
 # Details : Menu option selected - Show plaintext file.
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -310,7 +310,7 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : 1.0
+# Version : 3.0
 # Details : Menu option selected - Show plaintext file.
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -326,7 +326,7 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : 1.0
+# Version : 3.0
 # Details : Menu option selected - Encrypt text.txt, output to text1.enc
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -342,7 +342,7 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub                                                               
-# Version : 1.0
+# Version : 3.0
 # Details : Menu option selected - Decrypt text1.enc, output to decrypted.txt
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -351,7 +351,7 @@ while True:
       if os.path.exists('text1.enc'):
          if os.path.exists('private.pem'):
             os.system("openssl pkeyutl -decrypt -inkey private.pem -in text1.enc -out text.dec")
-#           os.system("python ./RsaCtfTool/RsaCtfTool.py --publickey key.pub --uncipherfile text1.enc > text.dec")
+#           os.system("RsaCtfTool --publickey key.pub --uncipherfile text1.enc > text.dec")
             print("\nFile successfuly decrypted.")
          else:
             print("\nThe private.pem file has not been created yet.")         
@@ -362,7 +362,7 @@ while True:
 # -------------------------------------------------------------------------------------
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version : 2.0                                                                
+# Version : 3.0                                                                
 # Details : Menu option selected - Crack RSA .xml file via known required parameters.
 # Modified: N/A                                                               
 # -------------------------------------------------------------------------------------
@@ -398,7 +398,7 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub                                                               
-# Version : 1.0
+# Version : 3.0
 # Details : Menu option selected - View text.dec message.
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -414,7 +414,7 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub                                                               
-# Version : 1.0
+# Version : 3.0
 # Details : Menu option selected - View _xml.dec message.
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -430,8 +430,8 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub                                                               
-# Version : 1.0
-# Details : Menu option selected - BLACK HAT - Load a third pary wek RSA file.
+# Version : 3.0
+# Details : Menu option selected - Allocate file.
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 
@@ -447,8 +447,8 @@ while True:
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub                                                               
-# Version : 1.0
-# Details : Menu option selected - BLACK HAT - Load a third pary wek RSA file.
+# Version : 3.0
+# Details : Menu option selected - Allocate file.
 # Modified: N/A
 # -------------------------------------------------------------------------------------
 

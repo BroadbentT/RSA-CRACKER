@@ -9,7 +9,7 @@
 # ------------------------------------------------------------------------------------- 
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version: 2.0                                                              
+# Version: 3.0                                                              
 # Details : Load any required imports.
 # Modified: N/A
 # -------------------------------------------------------------------------------------
@@ -20,7 +20,7 @@ import sys
 # -------------------------------------------------------------------------------------
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version: 2.0                                                              
+# Version: 3.0                                                              
 # Details : Display a universal header.    
 # Modified: N/A                                                               
 # -------------------------------------------------------------------------------------
@@ -38,7 +38,7 @@ print("      BY TERENCE BROADBENT BSC CYBER SECURITY (FIRST CLASS)     \n")
 # -------------------------------------------------------------------------------------
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version: 2.0                                                              
+# Version: 3.0                                                              
 # Details : Create the plaintext file and the weak .pub key file.
 # Modified: N/A                                                               
 # -------------------------------------------------------------------------------------
@@ -59,7 +59,7 @@ with open('weak_rsa.pub', 'w') as the_file:
 # -------------------------------------------------------------------------------------
 # AUTHOR  : Terence Broadbent                                                    
 # CONTRACT: GitHub
-# Version: 2.0                                                              
+# Version: 3.0                                                              
 # Details : Create the RSA xml file and its associated encrypted message.
 # Modified: N/A                                                               
 # -------------------------------------------------------------------------------------
