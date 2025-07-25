@@ -41,12 +41,6 @@ if os.path.exists('createfiles.py'):
 else:
     print("File createfiles.py is missing...")
     exit(True)
-
-if os.path.exists('RsaCtfTool'):
-   pass
-else:
-   print("RsaCtfTool's is missing in this directory...")
-   exit(True)
    
 # -------------------------------------------------------------------------------------
 # AUTHOR  : Terence Broadbent                                                    
