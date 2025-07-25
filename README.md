@@ -8,7 +8,8 @@ Usage: python3 rsa-cracker.py
 | python   | rsa-cracker.py | 3c915acfda08be67e4b2d193daaaa106 |
 | python   | createfiles.py | 6f2e34896d98be45ce3f1e49ee92f134 |
 
-- [X] Requires 3rd party [RsaCtfTool](https://github.com/sourcekris/RsaCtfTool) to be located within the sub directory.
+- [X] Requires 3rd party [RsaCtfTool](https://pypi.org/project/rsactftool/)
+pip3 install rsactftool --break-system-packages
 
 ## CONSOLE DISPLAY
 ![Screenshot](picture1.gif) 
